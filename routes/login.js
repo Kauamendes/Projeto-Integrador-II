@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const jwt = require('jsonwebtoken');
+const mysql = require('../mysql').pool;
+const bcrypt = require('bcrypt');
 
 
 router.get('/', (req , res, next) => {
@@ -8,7 +11,7 @@ router.get('/', (req , res, next) => {
  });
 
     router.post('/', (req, res, next) => {
-        exports.Login =  (re, res, next) => {
+        res.sendFile('home.html', { root: './Web' });
             mysql.getConnection((error, conn ) => {
                 if(erro) { return res.status(500).send({ error: erro}) }
                 const query = 'SELECT * FROM jogadores WHERE email = ?';
@@ -35,13 +38,12 @@ router.get('/', (req , res, next) => {
                                  mensagem: 'Autenticado com sucesso',
                                  token: token
                         });
-        
+                                
                         } 
                         return  res.status(401).send({ mensagem: 'Falha na autenticação' })
                     });
                 });
             });
-         }
     });
 
     

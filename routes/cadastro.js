@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const bcrypt = require('bcrypt');
+const mysql = require('../mysql').pool;
 
 router.get('/', (req, res, next) => {
     res.sendFile('cadastro.html', { root: './Web' });
 });
 
 router.post('/', (req, res, next) => {
-    res.sendFile('cadastro.html', { root: './Web' });
   exports.CadastrarUsuario = (req, res, next) => {
     mysql.getConnection((err, conn) => {
         conn.query('SELECT * FROM jogadores WHERE email = ?', [req.body.email], (error, results) => {
@@ -37,7 +38,7 @@ router.post('/', (req, res, next) => {
         })
 
     });
-}
+ }
     const jogador = {
         nome: req.body.nome,
         email: req.body.email,
@@ -47,6 +48,7 @@ router.post('/', (req, res, next) => {
         mensagem: 'inserindo um jogador',
         jogadorCriado: jogador
     })
+    res.sendFile('cadastro.html', { root: './Web' });
 });
 
 

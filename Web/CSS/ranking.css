@@ -1,6 +1,6 @@
 .header {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #90ee90;
     padding: 10px 10px;
   }
   
@@ -25,9 +25,8 @@
   }
   
   #container {
-  
-    max-width:150px;
-    max-height:100px;
+    max-width:100px;
+    max-height:40px;
     width: auto;
     height: auto;
   }
