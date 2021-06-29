@@ -19,6 +19,7 @@ app.use('/login' , rotaLogin);
 app.use('/cadastro' , rotaCadastro);
 app.use('/home', rotaHome);
 app.use('/ranking', rotaRanking);
+app.post('/login', rotaLogin);
 
 
 
