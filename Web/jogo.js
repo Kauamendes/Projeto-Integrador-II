@@ -196,7 +196,7 @@ function keyPressed() {
       tankX+=tankdX;
     }  
   }
-  if (keys[88] || keys[32]) {    
+  if (keys[70] || keys[32]) {    
     if(!shouldMoveTankBullet)fireTankBullet();
   }
 }
