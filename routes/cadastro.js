@@ -9,18 +9,19 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  exports.CadastrarUsuario = (req, res, next) => {
-    mysql.getConnection((err, conn) => {
-        conn.query('SELECT * FROM jogadores WHERE email = ?', [req.body.email], (error, results) => {
+    mysql.getConnection(function(err, conn) {
+        conn.query('SELECT email FROM jogadores WHERE email = ?', [req.body.email], (error, results) => {
             if (error) { return res.status(500).send({ error: error }) }
             if (results.length > 0) {
-                res.status(401).send({ mensagem: 'Email já cadastrado' })
+              
             } else {
                 bcrypt.hash(req.body.senha, 10, (errBcrypt, hash) => {
                     if (errBcrypt) { return res.status(500).send({ error: errBcrypt }) }
                     conn.query(
                         'INSERT INTO jogadores (nome, email, senha) VALUES (?, ?, ?)',
-                        [req.body.nome, email, hash],
+                        [req.body.nome,
+                         req.body.email,
+                         req.body.senha],
                         (error, results) => {
                             conn.release();
                             if (error) { return res.status(500).send({ error: error }) }
@@ -31,26 +32,25 @@ router.post('/', (req, res, next) => {
                                     email: req.body.email
                                 }
                             }
-                            return res.status(201).send(response);
+                            return res.status(201);
                         })
                 });
             }
         })
 
     });
- }
+ 
+    res.redirect("/login");
     const jogador = {
         nome: req.body.nome,
         email: req.body.email,
         senha: req.body.senha
     };
     res.status(201).send({
-        mensagem: 'inserindo um jogador',
-        jogadorCriado: jogador
-    })
-    res.sendFile('cadastro.html', { root: './Web' });
+    message: 'jogador criado com sucesso'
+    });
+    
 });
-
 
 
 module.exports = router;

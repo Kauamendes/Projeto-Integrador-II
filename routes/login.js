@@ -11,40 +11,26 @@ router.get('/', (req , res, next) => {
  });
 
     router.post('/', (req, res, next) => {
-        res.sendFile('home.html', { root: './Web' });
-            mysql.getConnection((error, conn ) => {
-                if(erro) { return res.status(500).send({ error: erro}) }
-                const query = 'SELECT * FROM jogadores WHERE email = ?';
-                conn.query(query,[], (error, results, fields) => {
-                    conn.release();
-                    if(error) {return res.status(500).send({ error: error}) }
-                    if(results.length < 1) {
-                        return res.status(401).send({ mensagem: 'Falha na autenticação' })
+            mysql.getConnection(function(error, conn )  {
+                if(error) { return res.status(500).send({ error: error}) }
+                const {nome, email, senha} = req.body;
+                conn.query = ('SELECT email FROM jogadores WHERE email = ?' , req.body.email, (error, results) => {
+                    if(error) {
+                        console.log(error);
+                    } 
+                     conn.query = ('SELECT senha FROM jogadores WHERE senha = ?' , req.body.senha, (error, results) => {
+                    if(results.length > 0) {
+                        return res.render('/home');
                     }
-                    bcrypt.compare(req.body.senha, results[0].senha, (err, result) => {
-                        if(err) {
-                            return res.status(401).send({ mensagem: 'Falha na autenticação' })
-                        }
-                        if (result) {
-                            const token = jwt.sign({
-                             id: results[0].id,
-                             email: results[0].email
-                            }, 
-                            process.env.JWT_KEY,
-                            {
-                                expiresIn: "1h"
-                            })
-                            return res.status(200).send({
-                                 mensagem: 'Autenticado com sucesso',
-                                 token: token
-                        });
-                                
-                        } 
-                        return  res.status(401).send({ mensagem: 'Falha na autenticação' })
-                    });
-                });
-            });
-    });
+                })
+                })
+            })
+    
+        });
+    
+
+        
+  
 
     
 

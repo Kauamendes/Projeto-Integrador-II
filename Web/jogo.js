@@ -6,7 +6,7 @@ let ctx = canvas.getContext("2d");
 // if (window.matchMedia("(max-width: 600px)").matches) { // If media query matches
 //     canvas.width = 320;
 //     canvas.height = 480;
-//   } 
+//   }
 // //media queries
 
 
@@ -62,7 +62,7 @@ var invaderTopOffset = 20;
 var armyDirection = "right";
 var armyDx = 10;
 var armyDy = 10;
-var armySpeed = 40;  
+var armySpeed = 40;
 var armySpeed__decrement = 10;
 let aliveInvaders = armyColumns* armyRows;
 var armyInvaderBulletsSpeed = 4;
@@ -81,7 +81,7 @@ var invBullet__prevFrameCount=0;
 
 // ################################################################### explosion variables
 // Options
-const background            = '#FFF';                    
+const background            = '#FFF';
 var particlesPerExplosion   = 50;
 const particlesMinSpeed     = 1;
 const particlesMaxSpeed     = 6;
@@ -104,14 +104,14 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 // ################################################################### main game loop
 window.addEventListener('load', function() {
-  drawStartScreen();  
+  drawStartScreen();
 })
 
 function startGame(){
     clearInterval(startScreenTimeout);
     gameRunning=true;
     gameInit();
-    constructArmy(armyX,armyY);  
+    constructArmy(armyX,armyY);
     gameLoop();
 }
 
@@ -120,7 +120,7 @@ function gameInit(){
   armyArray = [];
   score = 0;
   lives = allowedLives;
-  armyDirection = "right";  
+  armyDirection = "right";
   aliveInvaders = armyColumns* armyRows;
   frameCount=0;
   armyPrevFrameCount=0;
@@ -133,9 +133,9 @@ function gameLoop(){
   //game lost by losing lives
   if(lives <= 0 || !gameRunning){
     gameRunning=false;
-    ctx.clearRect(0,0,canvas.width,canvas.height);    
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     drawScore();
-    drawLives();    
+    drawLives();
     drawGameOver("you lost");
     drawBottomHelper();
     return false;
@@ -155,7 +155,7 @@ function gameLoop(){
   moveArmy();
   drawArmyOfInvaders();
   keyPressed();
-  drawTank(tankX,tankY);  
+  drawTank(tankX,tankY);
   if(shouldMoveTankBullet) {
     drawBullet(tankBullet__x,tankBullet__y);
     moveTankBullet();
@@ -186,7 +186,7 @@ window.addEventListener("keydown", ()=>keys[event.keyCode] = true);
 window.addEventListener("keyup", ()=>keys[event.keyCode] = false);
 window.addEventListener("keypress", keypressedHandler);
 function keyPressed() {
-  if (keys[37]) {     
+  if (keys[37]) {
     if (tankX-tankdX>0) {
       tankX-=tankdX;
     }
@@ -194,9 +194,9 @@ function keyPressed() {
   if (keys[39]) {
     if(canvas.width - (tankX+tankWidth) > tankdX) {
       tankX+=tankdX;
-    }  
+    }
   }
-  if (keys[70] || keys[32]) {    
+  if (keys[70] || keys[32]) {
     if(!shouldMoveTankBullet)fireTankBullet();
   }
 }
@@ -220,28 +220,28 @@ function invadersBulletHandler(){
 }
 
 function generateInvaderRandomBullet(){
-    // let randomInvaderR = genRandomNumber(armyRows); 
-    // let randomInvaderC = genRandomNumber(armyColumns); 
+    // let randomInvaderR = genRandomNumber(armyRows);
+    // let randomInvaderC = genRandomNumber(armyColumns);
     // let rInvader = armyArray[randomInvaderR][randomInvaderC];
     let aliveArmy = [];
-    for (let i = 0; i < armyRows; i++) {    
+    for (let i = 0; i < armyRows; i++) {
       for(let j = 0; j < armyColumns; j++){
         let soldier = armyArray[i][j];
-        if(soldier.status=='alive')        
+        if(soldier.status=='alive')
         aliveArmy.push(armyArray[i][j]);
       }
     }
-    
+
     let rInvader = aliveArmy[genRandomNumber(aliveArmy.length)];
     if (rInvader.status=='alive') {
       let iBullet = {
         x : rInvader.x + invaderWidth/2,
-        y : rInvader.y + invaderHeight    
+        y : rInvader.y + invaderHeight
       };
       invaderBulletsArray.push(iBullet);
       drawInvaderBullet(iBullet.x,iBullet.y);
     }
-    
+
 
 }
 
@@ -251,7 +251,7 @@ function genRandomNumber(rng){
 
 function moveInvaderBullets(){
   for(let i = 0 ; i < invaderBulletsArray.length; i++){
-    let iB = invaderBulletsArray[i];    
+    let iB = invaderBulletsArray[i];
     iB.y = iB.y + invBullet_dy;
     //check if bullet out of bounds
     if(iB.y > canvas.height){
@@ -261,7 +261,7 @@ function moveInvaderBullets(){
     if(
       iB.x > tankX &&
       iB.x < tankX + tankWidth &&
-      iB.y > tankY && 
+      iB.y > tankY &&
       iB.y < tankY + tankHeight
     )
     {
@@ -270,7 +270,7 @@ function moveInvaderBullets(){
       particlesMaxSize      = 4;
       triggerExplosion(tankX+tankWidth/2,tankY+tankHeight/2);
       invaderBulletsArray.splice(i,1);
-      console.log("lost 1 life");            
+      console.log("lost 1 life");
       lives--;
       hasLifeDecreased=true;
     }
@@ -288,7 +288,7 @@ function helperHandler(){
     drawBottomMessage(`HIT. Lives Left: ${lives}`, 150);
     setTimeout(() => {
     hasLifeDecreased=false;
-    drawBottomMessage(``, 150);      
+    drawBottomMessage(``, 150);
     }, 2000);
   }
 
@@ -308,8 +308,8 @@ function drawInvader(x,y,sHeight){
     x, // dx
     y, // dy
     invaderWidth, // dWidth
-    invaderHeight // dHeight 
-    );    
+    invaderHeight // dHeight
+    );
     ctx.closePath();
 }
 
@@ -327,7 +327,7 @@ function drawTank(x,y){
     x, // dx
     y, // dy
     tankWidth, //42, // dWidth
-    tankHeight //24 // dHeight 
+    tankHeight //24 // dHeight
     );
 ctx.closePath();
 }
@@ -352,17 +352,17 @@ function moveArmy(){
       dx=-1;
       dy=armyDy;
     }
-            
+
   } else
   if (armyDirection == 'left') {
       if (armyX-armyDx>0) {
-      dx=-1;        
+      dx=-1;
       }else{
         armyDirection='right';
         dx=1;
         dy=armyDy;
       }
-      
+
   }
 
   armyX+=armyDx*(dx);
@@ -383,13 +383,13 @@ function constructArmy(aX,aY){
   }
 }
 
-function updateArmy(adx,ady){    
-  for (let i = 0; i < armyRows; i++) {    
+function updateArmy(adx,ady){
+  for (let i = 0; i < armyRows; i++) {
     for(let j = 0; j < armyColumns; j++){
       let soldier = armyArray[i][j];
       soldier.x = soldier.x+(adx);
       soldier.y = soldier.y + ady;
-      
+
     }
   }
 }
@@ -406,9 +406,9 @@ function drawArmyOfInvaders(){
               gameRunning=false;
             }
         }
-      
+
     }
-  }  
+  }
 }
 
 
@@ -432,7 +432,7 @@ function fireTankBullet(){
 
 function moveTankBullet(){
     if(tankBullet__y < 0){
-      shouldMoveTankBullet= false;      
+      shouldMoveTankBullet= false;
     }
     //check if a invader is hit by the bullet
     for (let i = 0; i < armyRows; i++) {
@@ -449,7 +449,7 @@ function moveTankBullet(){
             soldier.status='dead';
             shouldMoveTankBullet=false;
             aliveInvaders--;
-            score++;            
+            score++;
             explosionColor = "white";
             particlesPerExplosion   = 50;
             particlesMaxSize        = 3;
@@ -460,10 +460,10 @@ function moveTankBullet(){
               console.log("speed increase: " + armySpeed);
             }
           }
-                  
+
       }
-    }  
-    //check if a invader is hit by the bullet    
+    }
+    //check if a invader is hit by the bullet
 
     tankBullet__y -= tankBullet__dy;
 }
@@ -482,7 +482,7 @@ function drawScoreSeprateLine(){
   ctx.stroke();
   ctx.shadowBlur = 0;
   ctx.shadowOffsetY=0;
-  ctx.shadowOffsetY=0;  
+  ctx.shadowOffsetY=0;
 }
 
 
@@ -491,7 +491,7 @@ function drawBottomMessage(message,sx){
   ctx.beginPath();
   ctx.font = "20px Play";
   ctx.fillStyle="white";
-  ctx.fillText(message, sx, canvas.height-10);  
+  ctx.fillText(message, sx, canvas.height-10);
   ctx.closePath();
 }
 function drawScore(){
@@ -530,7 +530,7 @@ function drawBlinker(func1, func2){
     counter++;
   }, 400);
 }
-  
+
   function drawStartScreen(){
     drawBlinker(function(){ drawScreen__line1("Unhealty Invaders") },function(){ drawScreen__line2("Aperte enter para jogar") });
   }
@@ -543,7 +543,7 @@ function drawScreen__line1(message){
     ctx.font = "60px Play";
     ctx.fillStyle="white";
     ctx.textAlign = "center";
-    ctx.fillText(message, canvas.width/2,canvas.height/2);  
+    ctx.fillText(message, canvas.width/2,canvas.height/2);
     ctx.closePath();
     ctx.restore();
 }
@@ -553,7 +553,7 @@ function drawScreen__line2(message){
     ctx.fillStyle="green";
     ctx.textAlign = "center";
     ctx.font = "40px Play";
-    ctx.fillText(message, canvas.width/2,canvas.height/2+60);  
+    ctx.fillText(message, canvas.width/2,canvas.height/2+60);
     ctx.closePath();
     ctx.restore();
 }
@@ -680,5 +680,3 @@ function randInt(min, max, positive) {
 
 
 // ################################################################### Explosion functions
-
-
