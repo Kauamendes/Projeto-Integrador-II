@@ -77,12 +77,50 @@ body {
     margin: 10vh auto;
     background-color: #000;
     position: static;
-    position: absolute; top:60px;left: 100px;
+    position: absolute; top:60px;left: 50px;
   }
+
+.ranking {
+  position: absolute; left: 900px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: antiquewhite;
+}
+
+#nome {
+  position: absolute;
+}
+
+.nomeSql {
+  position: absolute; left: 55px;
+  color: #00FF00;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#pontuacao {
+ position: absolute; left: 215px;
+}
+
+.pontuacaoSql {
+ position: absolute; left: 310px;
+ color: #00FF00;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#vidas {
+  position: absolute; left: 335px;
+}
+
+.vidasSql {
+  position: absolute; left: 390px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #00FF00;
+}
+
 
 div.comandos {
   position: absolute;
-  top: 830px;
+  top: 860px;
   width: 100%;
   text-align: center;
   font-size: 100%;
@@ -92,13 +130,13 @@ div.comandos {
 .comandotxt1 {
   font-size: 24px;
   width: 40%;
-  position: absolute; top: 110px; left: 150px;
+  position: absolute; top: 110px; left: 100px;
 }
 
 .comandotxt2 {
   font-size: 24px;
   width: 40%;
-  position: absolute; top: 110px; right: 150px;
+  position: absolute; top: 110px; right: 100px;
 }
 
 .space-command {
@@ -110,5 +148,5 @@ div.comandos {
 }
 
 .setinha-command {
-  position: absolute; top: 180px; right: 450px;
+  position: absolute; top: 180px; right: 390px;
 }

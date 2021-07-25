@@ -19,7 +19,7 @@ let ctx = canvas.getContext("2d");
 var animationID;
 
 // ################################################################### load sprites
-let spriteBase64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAEACAYAAAADRnAGAAACGUlEQVR42u3aSQ7CMBAEQIsn8P+/hiviAAK8zFIt5QbELiTHmfEYE3L9mZE9AAAAqAVwBQ8AAAD6THY5CgAAAKbfbPX3AQAAYBEEAADAuZrC6UUyfMEEAIBiAN8OePXnAQAAsLcmmKFPAQAAgHMbm+gbr3Sdo/LtcAAAANR6GywPAgBAM4D2JXAAABoBzBjA7AmlOx8AAEAzAOcDAADovTc4vQim6wUCABAYQG8QAADd4dPd2fRVYQAAANQG0B4HAABAawDnAwAA6AXgfAAAALpA2uMAAABwPgAAgPoAM9Ci/R4AAAD2dmqcEQIAIC/AiQGuAAYAAECcRS/a/cJXkUf2AAAAoBaA3iAAALrD+gIAAADY9baX/nwAAADNADwFAADo9YK0e5FMX/UFACA5QPSNEAAAAHKtCekmDAAAAADvBljtfgAAAGgMMGOrunvCy2uCAAAACFU6BwAAwF6AGQPa/XsAAADYB+B8AAAAtU+ItD4OAwAAAFVhAACaA0T7B44/BQAAANALwGMQAAAAADYO8If2+P31AgAAQN0SWbhFDwCAZlXgaO1xAAAA1FngnA8AACAeQPSNEAAAAM4CnC64AAAA4GzN4N9NSfgKEAAAAACszO26X8/X6BYAAAD0Anid8KcLAAAAAAAAAJBnwNEvAAAA9Jns1ygAAAAAAAAAAAAAAAAAAABAQ4COCENERERERERERBrnAa1sJuUVr3rsAAAAAElFTkSuQmCC";
+let spriteBase64 = "/img/inimigo-nave.png";
 const tank = new Image();
 tank.src = spriteBase64;
 const invader = new Image();
@@ -136,14 +136,14 @@ function gameLoop(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     drawScore();
     drawLives();
-    drawGameOver("you lost");
+    drawGameOver("Você Perdeu");
     drawBottomHelper();
     return false;
   }
   //game won by killing invaders
   if(aliveInvaders == 0){
     gameRunning=false;
-    drawGameOver("you won");
+    drawGameOver("Você Venceu");
     drawBottomHelper();
     return false;
   }
@@ -282,10 +282,10 @@ function moveInvaderBullets(){
 
 function helperHandler(){
   if(aliveInvaders == armyColumns* armyRows){
-    drawBottomMessage("press SPACE to fire bullet", 125);
+    drawBottomMessage("Pressione F para atirar", 125);
   }  else
   if(hasLifeDecreased){
-    drawBottomMessage(`HIT. Lives Left: ${lives}`, 150);
+    drawBottomMessage(`ATINGIDO. Vidas Restantes: ${lives}`, 150);
     setTimeout(() => {
     hasLifeDecreased=false;
     drawBottomMessage(``, 150);
@@ -495,14 +495,14 @@ function drawBottomMessage(message,sx){
   ctx.closePath();
 }
 function drawScore(){
-  drawBottomMessage("Score: "+score,canvas.width - 90)
+  drawBottomMessage("Pontuação: "+score,canvas.width - 120)
 }
 function drawLives(){
-  drawBottomMessage("Lives: "+lives,10)
+  drawBottomMessage("Vidas: "+lives,10)
 }
 
 function drawBottomHelper(){
-  drawBottomMessage("Press enter to play",150)
+  drawBottomMessage("Pressione enter para jogar",150)
 }
 
 
@@ -517,7 +517,7 @@ function drawInvaderBullet(ix, iy){
 }
 
 function drawGameOver(message){
-  drawBlinker(function(){ drawScreen__line1("Game Over ") },function(){ drawScreen__line2(message) });
+  drawBlinker(function(){ drawScreen__line1("Fim de Jogo ") },function(){ drawScreen__line2(message) });
 }
 
 

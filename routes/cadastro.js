@@ -17,7 +17,7 @@ router.post('/', (req, res, next) => {
                 bcrypt.hash(req.body.senha, 10, (errBcrypt, hash) => {
                     if (errBcrypt) { return res.status(500).send({ error: errBcrypt }) }
                     conn.query(
-                        'INSERT INTO jogadores (nome, email, senha) VALUES (?, ?, ?)',
+                        'INSERT INTO jogadores (nome, email, senha,pontuacao,vidas) VALUES (?, ?, ?, 0, 0)',
                         [req.body.nome,
                          req.body.email,
                          req.body.senha],
