@@ -3,16 +3,26 @@ const morgan = require('morgan');
 const app = express();
 app.use(express.static('Web'))
 const bodyParser = require('body-parser');
-const path = require('path');
+const session = require('express-session');
 
+
+//configurações
+app.use(session({ 
+    secret: "projetodoifsc",
+    resave: true,
+    saveUninitialized: true
+ }))
+
+
+//rotas
 const rotaLogin = require('./routes/login');
 const rotaCadastro = require('./routes/cadastro');
 const rotaHome = require('./routes/home');
 const rotaRanking = require('./routes/ranking');
 
 
-
 app.use(morgan('dev'))
+//body-parser
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 

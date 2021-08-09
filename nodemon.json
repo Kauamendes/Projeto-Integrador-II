@@ -2,7 +2,7 @@
     
     "env": {
         "MYSQL_USER": "root",
-        "MYSQL_PASSWORD": "",
+        "MYSQL_PASSWORD": "brt2016brt",
         "MYSQL_DATABASE": "mydb",
         " MYSQL_HOST": "localhost",
         "MYSQL_PORT": 3306,
