@@ -1,4 +1,4 @@
-# Projeto Integrador do Curso de Analise e Desenvlvimento de Sistemas IFSC
+# Projeto Integrador do Curso de Analise e Desenvolvimento de Sistemas IFSC
 
 Equipe: Kauã Mendes, Brian Gonçalves e Horácio Pereira.
 Campus: Tubarão.
