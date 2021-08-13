@@ -114,6 +114,11 @@ function startGame(){
     gameInit();
     constructArmy(armyX,armyY);
     gameLoop();
+    const trilhaSonora = document.querySelector('audio');
+    trilhaSonora.play();
+    if(trilhaSonora.played) {
+      trilhaSonora.play();
+    }
 }
 
 function gameInit(){
@@ -683,24 +688,31 @@ function randInt(min, max, positive) {
 // ################################################################### Explosion functions
 
 
-  //fazer uma função que ao fim do jogo pegue o email do usuario logado e de um UPDATE na pontuacao dele
- const mysql = require('mysql2');
-  let con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "brt2016brt",
-    database: "mydb",
-    port: "3606"
-});
-  con.connect(function(err) {
-    if(err) throw err;
-    console.log("Conected!");
-  })
 
-  function AtualizaPontuacao() {
+//################################################################## TRilha sonora
+
+
+
+
+  //fazer uma função que ao fim do jogo pegue o email do usuario logado e de um UPDATE na pontuacao dele
+// const mysql = require('mysql2');
+ // let con = mysql.createConnection({
+ //   host: "localhost",
+ //   user: "root",
+  //  password: "brt2016brt",
+  //  database: "mydb",
+   // port: "3606"
+//});
+  //con.connect(function(err) {
+  //  if(err) throw err;
+  //  console.log("Conected!");
+  //})
+
+  //function AtualizaPontuacao() {
     
  //con.query("update o que deve ser atualizado");
-}
+ 
+//}
 
 
 
