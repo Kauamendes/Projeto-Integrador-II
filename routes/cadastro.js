@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const session = require("express-session");
 const mysql = require('../mysql').pool;
+var email = "";
+
 
 
 router.get('/', (req, res, next) => {
@@ -45,9 +47,8 @@ router.post('/', (req, res, next) => {
         })
     });
     var email = req.body.email;
-    const sessao = req.session.email = email;
     console.log(sessao);
 });
 
-
+module.exports = email;
 module.exports = router;

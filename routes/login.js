@@ -13,7 +13,7 @@ router.get('/', (req , res, next) => {
         conn.query(
             'SELECT email FROM jogadores WHERE email = ?', req.body.email, (error, resultsemail) => {
             if (resultsemail.length == 0) {
-                return res.status(500).send({ error: " email é invalido tente novamente!" })
+                return res.status(500).send({ error: " email é invalido tente novamente!" }),
                 console.log("email e invalido!");
                     }
  
@@ -26,7 +26,8 @@ router.get('/', (req , res, next) => {
                             return res.status(500).send({ error: "Email ou senha invalidos!" }),
                             console.log("senha invalida"),
                             console.log(resultssenha.length),
-                            console.log(resultsemail.length);
+                            console.log(resultsemail.length),
+                            console.log(req.body.email);
                         }
                  })
              })
@@ -36,7 +37,6 @@ router.get('/', (req , res, next) => {
 
         
   
-
     
 
         module.exports = router;
