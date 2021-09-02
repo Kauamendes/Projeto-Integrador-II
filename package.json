@@ -25,14 +25,15 @@
   "devDependencies": {
     "type": "module"
   },
+  "engines": {
+    "node": "v14.17.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC"
-},
- "engines": {
-        "node": "v14.17.0"
-  }
 }
+
+
