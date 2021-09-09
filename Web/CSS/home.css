@@ -156,3 +156,27 @@ div.comandos {
   top: 260px;
 
 }
+
+.registrapontos {
+  position: absolute; right:140px; top:190px;
+}
+
+.registrapontos > button  {
+  border-radius: 30px;
+  background-image:linear-gradient(to right, #16e137, #1e752c);
+  width: 100%;
+  padding: 15px;
+  color: white;
+  outline: 0;
+  border: 0px;
+}
+
+.registrapontos  {
+  border-radius: 30px;
+  background-image:linear-gradient(to right, #16e137, #1e752c);
+  width: 10%;
+  padding: 15px;
+  color: white;
+  outline: 0;
+  border: 0px;
+}
