@@ -46,7 +46,8 @@ router.post('/', (req, res, next) => {
            
         })
     });
-    var email = req.body.email;
+    email = req.body.email;
+    sessao = email;
     console.log(sessao);
 });
 

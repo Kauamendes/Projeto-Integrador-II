@@ -13,8 +13,7 @@ router.get('/', (req, res, next) => {
      mysql.getConnection(function(err, conn) {
           conn.query(` SELECT * FROM jogadores ORDER BY pontuacao DESC `, (err, results) => {
               Nresult = results;
-              console.log(Nresult);
-              res.status(304).send;
+              res.status(200).send;
                email = req.body.email;
                vidas = req.body.vidas;
                pontos = req.body.pontuacao;
@@ -35,11 +34,12 @@ router.post('/',  function(req, res, next)  {
              console.log(pontos);
              console.log(email);
              res.status(201).send;
-             res.render('ranking', {
-                Nresult: Nresult
-             });
+             
          });
      })
+     res.render('ranking', { 
+       Nresult: Nresult
+     });
  });
  
 

@@ -5,7 +5,6 @@ app.use(express.static('Web'))
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require('path'); 
-const html = require('html');
 
 //configurações
 app.use(session({ 
