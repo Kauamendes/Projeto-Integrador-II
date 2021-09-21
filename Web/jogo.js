@@ -734,7 +734,7 @@ function randInt(min, max, positive) {
 function mandavidas() {
   if(gameRunning === false) {
     var vidas =  ""+lives;
-    const vSQL = document.getElementsByClassName("input").textContent = vidas;
+    const vSQL = document.getElementById("vSQL").textContent = vidas;
     console.log(vidas);
   }
 }
@@ -742,9 +742,23 @@ function mandavidas() {
 function mandapontos() {
   if(gameRunning === false) {
     var pontos = ""+score;
-    const pSQL = document.getElementsByClassName("input").textContent = pontos;
+    const pSQL = document.getElementById("pSQL").textContent = pontos;
     console.log(pontos);
   }
+}
+
+function mandaRanking() {
+
+var Nresult = 0;
+var m = 1;
+
+  while(m < Nresult) {
+      
+  const nSQL = document.getElementById("nSQL0").textContent = ""+nome;
+  const vSQL = document.getElementById("vSQL0").textContent = ""+vidas;
+  const pSQL = document.getElementById("pSQL0").textContent = ""+pontuacao;
+   m++;
+}
 }
 
 module.exports = pontos;

@@ -7,13 +7,11 @@ const session = require('express-session');
 const path = require('path'); 
 
 //configurações
-const oneHour = 1000 * 60 * 60 * 1;
-app.use(session({
-    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: oneHour },
-    resave: false 
-}));
+app.use(session({ 
+    secret: "projetodoifsc",
+    resave: true,
+    saveUninitialized: true
+ }))
 
  app.set('view engine', 'ejs'); 
  app.set('views', './views');
@@ -26,7 +24,7 @@ const rotaRanking = require('./routes/ranking');
 
 app.use(morgan('dev'))
 //body-parser
-app.use(bodyParser.urlencoded({extended: false }));
+app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 
 
