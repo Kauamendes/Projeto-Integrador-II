@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const session = require('express-session');
-const mysql = require('../mysql').pool;
+const postgres = require('../postgres').pool;
 
 
 
@@ -17,7 +17,7 @@ var session;
 session = req.session;
 session.email = email;
 
-    mysql.getConnection(function(err, conn) {
+    postgres.getConnection(function(err, conn) {
         conn.query(
             'SELECT email FROM jogadores WHERE email = ?', email, (error, resultsemail) => {
             if (resultsemail.length == 0) {
