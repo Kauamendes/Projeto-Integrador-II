@@ -1,0 +1,12 @@
+{
+    
+    "env": {
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": "branet1701",
+        "POSTGRES_DATABASE": "unhealthy_invaders",
+        " POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": 5432,
+
+        "JWT_KEY" : "segredoDoProjeto"
+    }
+}

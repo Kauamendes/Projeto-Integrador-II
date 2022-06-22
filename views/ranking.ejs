@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./CSS/ranking.css">
+    <link rel="icon" href="img/logoProjeto2.png">
+    <title></title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a class="logo"> <img id="container" src="img/logoProjeto2.png"> Unhealthy Invaders</a>
+             <div class="header-right">
+              <a class="active" href="/home">Home</a>
+              <a href="/login">Login</a>
+              <a href="/ranking">Ranking</a>
+            </div>
+          </div>
+    </header>
+  
+    
+<div class="quadrado"></div>
+
+<div class="nomeT">
+    <h1>Nome</h1>
+</div>
+
+<div class="emailT">
+    <h1>Email</h1>
+</div>
+
+<div class="vidaT">
+    <h1>Vidas</h1>
+</div>
+
+<div class="pontosT">
+    <h1>Pontuação</h1>
+</div>
+
+   <div class="rankingN">
+    <ol>
+        <% Nresult.forEach(function(result) { %>
+            <li>
+                <%= result.nome %>  
+            </li>
+        <% }); %>
+    </ol>  
+</div>
+
+<div class="rankingE">
+    <ul>
+        <% Nresult.forEach(function(result) { %>
+            <li>
+                 <%= result.email %>               
+            </li>
+        <% }); %>
+    </ul>
+</div>
+
+<div class="rankingV">
+    <ul>
+        <% Nresult.forEach(function(result) { %>
+            <li>
+                 <%= result.vidas %>               
+            </li>
+        <% }); %>
+    </ul>
+</div>
+
+
+
+<div class="rankingP">
+    <ul>
+        <% Nresult.forEach(function(result) { %>
+            <li>
+              <%= result.pontuacao %>
+            </li>
+        <% }); %>
+    </ul>
+</div>
+
+
+</body>
+</html>
