@@ -29,18 +29,19 @@
         <audio src="./audio/trilhaSonoraOpcao2.mp3" ></audio>
     </div>
 
+    
 <div class="ranking">
-    <script> </script>
     <h1>Ultima pontuação</h1>
     <div class="pontuacao-jogador">
         <p id="pontuacao">Pontuação:</p><p class="pontuacaoSql" name="vidas" id="pSQL" >0</p>
         <p id="vidas">Vidas:</p> <p class="vidasSql" id="vSQL" name="pontos" >0</p>
+        <p class="Email">Logado como:</p><p class="emailtxt" name="email" > <%= Login = email %> </p>
     </div>
 </div>
 
-<div class="registrapontos">
-    <form method="GET" action="/ranking">
-        <button>Vizualizar pontuação</button>
+<div class="registrapontos"> 
+    <form action="/home" method="POST">
+  <button>Registrar pontuação</button>
     </form>
 </div>
 

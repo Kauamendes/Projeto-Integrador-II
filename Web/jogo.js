@@ -114,11 +114,6 @@ function startGame(){
     gameInit();
     constructArmy(armyX,armyY);
     gameLoop();
-    const trilhaSonora = document.querySelector('audio');
-    trilhaSonora.play();
-    if(trilhaSonora.played) {
-      trilhaSonora.play();
-    }
 }
 
 function gameInit(){
@@ -133,24 +128,29 @@ function gameInit(){
   invBullet__prevFrameCount=0;
   hasLifeDecreased = false;
   armySpeed = 40;
+  console.log(gameRunning)
 }
 
 function gameLoop(){
   //game lost by losing lives
   if(lives <= 0 || !gameRunning){
-    gameRunning=false;
+    gameRunning = false;
     ctx.clearRect(0,0,canvas.width,canvas.height);
     drawScore();
     drawLives();
     drawGameOver("Você Perdeu");
     drawBottomHelper();
+    mandavidas();
+    mandapontos();
     return false;
   }
   //game won by killing invaders
   if(aliveInvaders == 0){
-    gameRunning=false;
+    gameRunning = false;
     drawGameOver("Você Venceu");
     drawBottomHelper();
+    mandavidas();
+    mandapontos();
     return false;
   }
   ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -539,7 +539,9 @@ function drawBlinker(func1, func2){
 
   function drawStartScreen(){
     drawBlinker(function(){ drawScreen__line1("Unhealty Invaders") },function(){ drawScreen__line2("Aperte enter para jogar") });
+    
   }
+
 
 
 
@@ -559,11 +561,50 @@ function drawScreen__line2(message){
     ctx.fillStyle="green";
     ctx.textAlign = "center";
     ctx.font = "40px Play";
-    ctx.fillText(message, canvas.width/2,canvas.height/2+60);
+    ctx.fillText(message, canvas.width/2,canvas.height/2+50);
     ctx.closePath();
     ctx.restore();
 }
-
+function drawScreen__line3(message){
+  ctx.save();
+  ctx.beginPath();
+  ctx.fillStyle="green";
+  ctx.textAlign = "center";
+  ctx.font = "12px Play";
+  ctx.fillText(message, canvas.width/2,canvas.height/2+30);
+  ctx.closePath();
+  ctx.restore();
+}
+function drawScreen__line4(message){
+  ctx.save();
+  ctx.beginPath();
+  ctx.fillStyle="green";
+  ctx.textAlign = "center";
+  ctx.font = "12px Play";
+  ctx.fillText(message, canvas.width/2,canvas.height/2+20);
+  ctx.closePath();
+  ctx.restore();
+}
+function drawScreen__line5(message){
+  ctx.save();
+  ctx.beginPath();
+  ctx.fillStyle="green";
+  ctx.textAlign = "center";
+  ctx.font = "12px Play";
+  ctx.fillText(message, canvas.width/2,canvas.height/2+50);
+  ctx.closePath();
+  ctx.restore();
+}
+function drawScreen__line6(message){
+  ctx.save();
+  ctx.beginPath();
+  ctx.fillStyle="green";
+  ctx.textAlign = "center";
+  ctx.font = "12px Play";
+  ctx.fillText(message, canvas.width/2,canvas.height/2+80);
+  ctx.closePath();
+  ctx.restore();
+}
 // ###################################################################
 
 // ################################################################### Explosion functions
@@ -690,31 +731,38 @@ function randInt(min, max, positive) {
 
 
 //################################################################## TRilha sonora
+function mandavidas() {
+  if(gameRunning === false) {
+    var vidas =  ""+lives;
+    const vSQL = document.getElementById("vSQL").textContent = vidas;
+    console.log(vidas);
+  }
+}
 
+function mandapontos() {
+  if(gameRunning === false) {
+    var pontos = ""+score;
+    const pSQL = document.getElementById("pSQL").textContent = pontos;
+    console.log(pontos);
+  }
+}
 
+function mandaRanking() {
 
+var Nresult = 0;
+var m = 1;
 
-  //fazer uma função que ao fim do jogo pegue o email do usuario logado e de um UPDATE na pontuacao dele
-// const mysql = require('mysql2');
- // let con = mysql.createConnection({
- //   host: "localhost",
- //   user: "root",
-  //  password: "brt2016brt",
-  //  database: "mydb",
-   // port: "3606"
-//});
-  //con.connect(function(err) {
-  //  if(err) throw err;
-  //  console.log("Conected!");
-  //})
+  while(m < Nresult) {
+      
+  const nSQL = document.getElementById("nSQL0").textContent = ""+nome;
+  const vSQL = document.getElementById("vSQL0").textContent = ""+vidas;
+  const pSQL = document.getElementById("pSQL0").textContent = ""+pontuacao;
+   m++;
+}
+}
 
-  //function AtualizaPontuacao() {
-    
- //con.query("update o que deve ser atualizado");
- 
-//}
-
-
+module.exports = pontos;
+module.exports = vidas;
 
  
 

@@ -60,3 +60,40 @@
       float: none;
     }
   }
+
+
+.quadrado {
+  width: 1250px;
+  border-radius: 50px;
+  height: 700px;
+  background-color: #ccc;
+  margin: 50px;
+}
+
+.rankingN {
+
+  position: absolute; left: 150px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingE {
+
+  position: absolute; left: 450px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingV {
+
+  position: absolute; left: 850px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingP {
+
+  position: absolute; left: 1000px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

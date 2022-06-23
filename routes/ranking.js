@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const postgres = require('../postgres').pool;
@@ -39,4 +40,28 @@ router.put('/update/ranking', function(req, res, next)  {
 })
 
 >>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
+=======
+const express = require('express');
+const router = express.Router();
+const mysql = require('../mysql').pool;
+
+var Nresult = [];
+
+
+router.get('/', function(req, res, next)  {
+    mysql.getConnection(function(err, conn) {
+        conn.query(` SELECT * FROM jogadores ORDER BY pontuacao DESC `, (err, results) => {
+            console.log("Tamanho do Array results = "+results.length);
+            Nresult = results;
+            res.status(200).send;
+            res.render('ranking', {
+                Nresult: Nresult
+            })
+            
+        }); 
+    }); 
+ 
+});
+
+>>>>>>> 3ee4026d003ba4897d8df7614f2fba3d378de321
 module.exports = router;

@@ -34,11 +34,17 @@
     "type": "module"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "engines": {
     "node": "v14.17.0"
   },
 =======
 >>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
+=======
+  "engines": {
+    "node": "v14.17.0"
+  },
+>>>>>>> 3ee4026d003ba4897d8df7614f2fba3d378de321
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -46,3 +52,5 @@
   "author": "",
   "license": "ISC"
 }
+
+
