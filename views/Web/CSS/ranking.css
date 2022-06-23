@@ -1,0 +1,123 @@
+.header {
+    overflow: hidden;
+    background-color: #90ee90;
+    padding: 10px 10px;
+  }
+  
+  /* Style the header links */
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    align-content: center;
+    padding-bottom: 10px;
+  }
+  
+  #container {
+    max-width:100px;
+    max-height:40px;
+    width: auto;
+    height: auto;
+  }
+  
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: rgb(0, 199, 33);
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: rgb(0, 199, 33);
+    color: white;
+  }
+  
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
+
+
+.quadrado {
+  width: 1250px;
+  border-radius: 50px;
+  height: 700px;
+  background-color: #ccc;
+  margin: 50px;
+}
+
+.rankingN {
+
+  position: absolute; left: 150px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingE {
+
+  position: absolute; left: 450px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingV {
+
+  position: absolute; left: 850px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.rankingP {
+
+  position: absolute; left: 1000px; top: 150px;
+  font-size: 22px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.nomeT {
+  position: absolute; left: 155px; top: 90px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.emailT {
+  position: absolute; left: 455px; top: 90px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.vidaT {
+    position: absolute; left: 855px; top: 90px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+
+.pontosT {
+  position: absolute; left: 1005px; top: 90px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

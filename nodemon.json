@@ -1,12 +1,36 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+{
+    
+    "env": {
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": "branet1701",
+        "POSTGRES_DATABASE": "unhealthy_invaders",
+        " POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": 5432,
+
+        "JWT_KEY" : "segredoDoProjeto"
+    }
+=======
+>>>>>>> cd039dff996dfa60743632ba8f11ae35d5514da3
 {
     
     "env": {
         "MYSQL_USER": "root",
+<<<<<<< HEAD
         "MYSQL_PASSWORD": "",
+=======
+        "MYSQL_PASSWORD": "brt2016brt",
+>>>>>>> cd039dff996dfa60743632ba8f11ae35d5514da3
         "MYSQL_DATABASE": "mydb",
         " MYSQL_HOST": "localhost",
         "MYSQL_PORT": 3306,
 
         "JWT_KEY" : "segredoDoProjeto"
     }
+<<<<<<< HEAD
+=======
+>>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
+>>>>>>> cd039dff996dfa60743632ba8f11ae35d5514da3
 }
