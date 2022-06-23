@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     
     "env": {
@@ -9,4 +10,17 @@
 
         "JWT_KEY" : "segredoDoProjeto"
     }
+=======
+{
+    
+    "env": {
+        "MYSQL_USER": "root",
+        "MYSQL_PASSWORD": "brt2016brt",
+        "MYSQL_DATABASE": "mydb",
+        " MYSQL_HOST": "localhost",
+        "MYSQL_PORT": 3306,
+
+        "JWT_KEY" : "segredoDoProjeto"
+    }
+>>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
 }

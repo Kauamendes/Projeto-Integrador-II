@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./CSS/home.css">
+    <link rel="icon" href="img/logoProjeto2.png">
+    <title></title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a class="logo"> <img id="container" src="img/logoProjeto2.png"> Unhealthy Invaders</a>
+            <div class="header-right">
+                <a class="active" href="/home">Home</a>
+                <a href="/login">Login</a>
+                <a href="/ranking">Ranking</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="jogo">
+        <canvas id="myCanvas" width="800px" height="600px"></canvas>
+        <script src="jogo.js"></script>
+        <audio src="./audio/trilhaSonoraOpcao2.mp3" ></audio>
+    </div>
+
+<div class="ranking">
+    <h1>Ranking de pontuações</h1>
+    <div class="pontuacao-jogador">
+        <p id="nome">Nome:</p> <p class="nomeSql">Kaua</p>
+        <p id="pontuacao">Pontuação:</p> <p class="pontuacaoSql">71</p>
+        <p id="vidas">Vidas:</p> <p class="vidasSql">3</p>
+    </div>
+</div>
+
+    <div class="comandos">
+         <h1>Controles</h1>
+             <br>
+      <p class="comandotxt1"> <b>Para atirar pressione a tecla espaço ou F</b>
+      <p class="comandotxt2"><b>Para se mover use as setinhas</b></p></p>
+     <img class="space-command" src="./img/teclaF.png">
+     <div class="space-command2">
+     <img src="./img/space.png">
+     </div>
+     <img class="setinha-command" src="./img/keyboard.png">
+     </div>
+
+</body>
+
+</html>

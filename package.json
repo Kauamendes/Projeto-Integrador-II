@@ -15,19 +15,30 @@
     "jsdom": "^17.0.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+<<<<<<< HEAD
     "node": "^16.1.0",
     "nodemon": "^2.0.7",
     "pg": "^8.7.3",
     "postgres": "^3.2.4",
     "sequelize": "^6.21.0",
+=======
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "node": "^16.1.0",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.6.2",
+>>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "type": "module"
   },
+<<<<<<< HEAD
   "engines": {
     "node": "v14.17.0"
   },
+=======
+>>>>>>> 431ca6e4fe4cc75a866f4664c06308a558358dda
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
